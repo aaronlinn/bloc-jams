@@ -18,6 +18,11 @@ body.landing .navbar {
   margin-bottom: 0;
 }
 
+// Added for nav background color
+body.collection nav {
+  background: rgba(255, 255, 255, .25);
+}
+
 .hero-content {
   background: #2F1D57;
   padding: 100px 0;

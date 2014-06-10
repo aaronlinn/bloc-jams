@@ -14,6 +14,9 @@ body.landing {
 body.landing .navbar {
   margin-bottom: 0; }
 
+body.collection nav {
+  background: rgba(255, 255, 255, 0.25); }
+
 .hero-content {
   background: #2f1d57;
   padding: 100px 0; }
