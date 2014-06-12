@@ -19,7 +19,7 @@ body.landing .navbar {
 }
 
 // Added for nav background color
-body.collection nav {
+body.collection nav, body.player nav {
   background: rgba(255, 255, 255, .25);
 }
 
