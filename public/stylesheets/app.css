@@ -220,11 +220,29 @@ td.song-number {
     border-radius: 50%;
     cursor: pointer;
     transition: all 100ms ease-in-out; }
+  .seek-bar.no-animate .thumb {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none; }
   .seek-bar:hover .thumb {
     width: 20px;
     height: 20px;
     margin-top: -10px;
     margin-left: -10px; }
+
+.player-overlay {
+  background: rgba(255, 255, 255, 0.7);
+  background-image: url('/images/placeholder-blur.jpg');
+  background-size: 100% auto;
+  position: fixed;
+  bottom: 150px;
+  left: 0;
+  right: 0;
+  top: 100%;
+  transition: top 350ms ease-in-out; }
+  .player-overlay.open {
+    top: 77px; }
 
 html {
   height: 100%; }

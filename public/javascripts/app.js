@@ -200,9 +200,62 @@ var changeAlbumView = function(album) {
   }  
 };
 
+var updateSeekPercentage = function($seekBar, event) {
+  var barWidth = $seekBar.width();
+  var offsetX = event.pageX - $seekBar.offset().left; // get mouse x offset here
+
+  var offsetXPercent = (offsetX  / $seekBar.width()) * 100;
+  offsetXPercent = Math.max(0, offsetXPercent);
+  offsetXPercent = Math.min(100, offsetXPercent);
+
+  var percentageString = offsetXPercent + '%';
+  $seekBar.find('.fill').width(percentageString);
+  $seekBar.find('.thumb').css({left: percentageString});
+};
+
+var setupSeekBars = function() {
+  $seekBars = $('.player-bar .seek-bar');
+  $seekBars.click(function(event) {
+    updateSeekPercentage($(this), event);
+  });
+
+  // used for clicking on the scrubber
+  $seekBars.find('.thumb').mousedown(function(event){
+    var $seekBar = $(this).parent();
+
+    $seekBar.addClass('no-animate');
+
+    $(document).bind('mousemove.thumb', function(event){
+      updateSeekPercentage($seekBar, event);
+    });
+
+    //cleanup
+    $(document).bind('mouseup.thumb', function(){
+      $seekBar.removeClass('no-animate');
+
+      $(document).unbind('mousemove.thumb');
+      $(document).unbind('mouseup.thumb');
+    });
+  });
+};
+
+var setupMenu = function() {
+  var playerOverlay = $('.player-overlay');
+
+  $('.queue-toggle a').on('click', function() {
+    playerOverlay.toggleClass('open');
+  });
+};
+
+var setupPlayerBar = function() {
+  setupSeekBars();
+  setupMenu();
+};
+
 if (document.URL.match(/\/album.html/)) {
   $(document).ready(function() {
     changeAlbumView(albumPicasso);
+    setupPlayerBar();
   });
 }
 
