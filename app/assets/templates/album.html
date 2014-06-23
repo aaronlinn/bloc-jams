@@ -14,15 +14,15 @@
   <div class='row'> <!-- Song table -->
     <table class='album-song-listing table'>
       <tr ng-repeat="song in album.songs" ng-mouseenter="onHoverSong(song)" ng-mouseleave="offHoverSong(song)">
-        <td>
+        <td class="song-number col-md-1">
           <span ng-switch="getSongState(song)">
             <span ng-switch-when="playing">
-              <a class="album-song-button">
+              <a class="album-song-button" ng-click="pauseSong(song)">
                 <i class="fa fa-pause"></i>
               </a>
             </span>
             <span ng-switch-when="hovered">
-              <a class="album-song-button">
+              <a class="album-song-button" ng-click="playSong(song)">
                 <i class="fa fa-play"></i>
               </a>
             </span>

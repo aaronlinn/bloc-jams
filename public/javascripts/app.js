@@ -350,12 +350,22 @@ blocJams.controller('Album.controller', ['$scope', function($scope) {
 
   var hoveredSong = null;
 
+  var playingSong = null;
+
   $scope.onHoverSong = function(song) {
     hoveredSong = song;
   };
 
   $scope.offHoverSong = function(song) {
     hoveredSong = null;
+  };
+
+  $scope.playSong = function(song) {
+    playingSong = song;
+  };
+
+  $scope.pauseSong = function(song) {
+    playingSong = null;
   };
 
   $scope.getSongState = function(song) {
