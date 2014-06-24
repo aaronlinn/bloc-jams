@@ -145,14 +145,13 @@
     transition: all 100ms ease-in-out;
   }
 
-  &.no-animate .thumb {
-    -moz-transition: none;
-    -webkit-transition: none;
-    -o-transition: color 0 ease-in;
-    transition: none;
-  }  
+  &:active {
+    .fill, .thumb {
+      transition: none;
+    }
+  }
 
-  &:hover .thumb {
+  &:hover .thumb, &:active .thumb {
     width: 20px;
     height: 20px;
     margin-top: -10px;
