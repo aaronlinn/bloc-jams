@@ -7,15 +7,15 @@
 
 <div class='selling-points container'> <!-- selling points -->
   <div class='row'>
-    <div class='point col-md-4'>
+    <div class='point col-sm-4'>
       <h5> Choose your music </h5>
       <p> The world is full of music, why should you have to listen to music that someone else chose? </p>
     </div>
-    <div class='point col-md-4'>
+    <div class='point col-sm-4'>
       <h5> Unlimited, streaming, ad-free </h5>
       <p> No arbitrary limits. No distractions </p>
     </div> 
-    <div class='point col-md-4'>
+    <div class='point col-sm-4'>
       <h5>Mobile enabled</h5>
       <p> Listen to your music on the go. This streaming service is available on all mobile platforms</p>
     </div>
@@ -24,8 +24,8 @@
 
 <div class="landing-album-list container">
   <div class="row" ng-click="albumShuffle()">
-    <div class="col-md-4" ng-repeat="albumURL in albumURLs">
-      <img  ng-src="{{albumURL}}">
+    <div class="col-sm-4 cover" ng-repeat="albumURL in albumURLs">
+      <img class="img-responsive"  ng-src="{{albumURL}}">
     </div>
   </div>
 </div>

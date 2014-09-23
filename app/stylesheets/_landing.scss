@@ -25,3 +25,43 @@
   font-size: 14px;
   }
 }
+
+.cover {
+  box-sizing: border-box;
+  position: relative;
+  perspective: 1000;
+  padding: 0;
+  margin: 0;
+}
+
+.cover:hover .coverContainer {
+  transform: rotateY(180deg);
+}
+
+.coverContainer {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.coverFront, .coverBack {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.coverFront {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.coverBack {
+  transform: rotateY(180deg);
+  background: rgba(255, 255, 255, .25);
+}
+
+.cover, .coverFront, .coverFront img, .coverBack {
+  width: 390px;
+  height: 390px;
+}

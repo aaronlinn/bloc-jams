@@ -36,11 +36,11 @@
     }
 
     .previous {
-      margin-right: 65px;
+      margin-right: 20%;
     }
 
     .play-pause {
-      margin-right: 60px;
+      margin-right: 20%;
       font-size: 30px
     }
   }
@@ -157,6 +157,31 @@
     height: 20px;
     margin-top: -10px;
     margin-left: -10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .player-bar {
+    height: 110px;
+
+    .container {
+      width: 90%;
+      display: block;
+    }
+
+    .left-controls {
+      width: 100%;
+      margin: 10px 0 10px;
+      text-align: center;
+    }
+
+    .currently-playing {
+      width: 100%;
+    }
+  }
+
+  .player-bar-control-group {
+    display: block;
   }
 }
 

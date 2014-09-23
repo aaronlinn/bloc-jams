@@ -1,0 +1,32 @@
+<html ng-app="starTraining">
+<head>
+  ...
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="starCourse">
+
+  <ul ng-controller="starNav">
+    <li ng-repeat="phone in phones">
+      {{phone.name}}
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
+
+</body>
+</html>
+
+
+starTraining = angular.module('StarTraining', []);
+
+
+starTraining.controller('StarCourse', function ($scope) {
+  $scope.courseNav = [
+    {'name': 'Home',
+     'url': 'index.html'},
+    {'name': 'Page Two',
+     'url': 'page-02.html'},
+    {'name': 'Page Three™',
+     'url': 'page-03.html'}
+  ];
+});

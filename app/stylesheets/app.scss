@@ -45,3 +45,44 @@ body.landing .navbar {
     }
   }  
 }
+
+.navbar-toggle .icon-bar {
+  background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  
+  .hero-content {
+    h1, h3 {
+      text-align: center;
+    }
+  }
+  
+  .landing-album-list {
+    /* Example class added to style the album covers for mobile */
+    .album-cover {
+      position: relative;
+      left: calc(50% - 200px);
+    }
+  }
+
+  .selling-points {
+    padding: 0;
+    .point {
+      padding: 3em 0.75em;
+      margin: 0 10%;
+      h5 {
+        height: 2.25em;
+      }
+      p {
+        text-align: center;
+        font-size: 1.25em;
+      }
+    }
+  }
+}
+
+

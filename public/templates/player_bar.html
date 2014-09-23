@@ -13,15 +13,15 @@
       </a>
     </div>
     <div class='currently-playing player-bar-control-group'>
-      <h2 class='song-name'>{{ songPlayer.currentSong.name }}</h2>
+      <h2 class='song-name hidden-xs hidden-sm'>{{ songPlayer.currentSong.name }}</h2>
       <div class='seek-control'>
         <slider value='{{playTime}}' max='{{songPlayer.currentSong.length}}' on-change='songPlayer.seek(value)'></slider>
         <div class='current-time'> {{ playTime | timecode }} </div>
         <div class='total-time'> {{ songPlayer.currentSong.length | timecode}}</div>
       </div>
-      <h3 class='artist-name'>{{ songPlayer.currentAlbum.artist }}</h3>
+      <h3 class='artist-name hidden-xs hidden-sm'>{{ songPlayer.currentAlbum.artist }}</h3>
     </div>
-    <div class='right-controls player-bar-control-group'>
+    <div class='right-controls player-bar-control-group hidden-xs hidden-sm'>
       <div class='volume' >
         <i class='fa' ng-class='volumeClass()'></i>
         <slider value='{{songPlayer.volume}}' max='100' on-change='songPlayer.setVolume(value)'></slider>
